@@ -33,7 +33,7 @@ const Hero = () => {
 
     return (
         <motion.div
-            className="vh-100 d-flex flex-column p-4 p-md-5"
+            className="d-flex flex-column p-4 p-md-5"
             style={{
                 maxWidth: "1100px",
                 fontFamily: "Switzer-Regular",
