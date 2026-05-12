@@ -22,8 +22,8 @@ const Hero = () => {
             <div className="">
                 <h4 className="m-0 p-0">Per continuare a giudicarmi potete visitare questi profili:</h4>
                 <div className="d-flex gap-3">
-                    <a href="https://linkedin.com" target="_blank" className="text-dark fs-3"><i style={blueStyle} className="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://linkedin.com" target="_blank" className="text-dark fs-3"><i style={blueStyle} className="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/alessiodalberto" target="_blank" className="text-dark fs-3"><i style={blueStyle} className="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/iosonoalessioo_/" target="_blank" className="text-dark fs-3"><i style={blueStyle} className="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
 
