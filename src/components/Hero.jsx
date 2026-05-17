@@ -116,7 +116,7 @@ const Hero = () => {
                 </motion.div>
 
                 {/* Footer Social */}
-                <motion.div className="mt-4" variants={itemVariants}>
+                <motion.div className="" variants={itemVariants}>
                     <p className="fs-5 mb-3 ">Per continuare a giudicarmi potete visitare questi profili:</p>
                     <div className="d-flex gap-4">
                         {["linkedin-in", "instagram"].map((icon, index) => (

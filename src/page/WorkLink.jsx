@@ -38,7 +38,7 @@ const WorkLink = () => {
             </div>
 
             {/* Il tuo blocco di codice originale */}
-            <div className="d-flex align-items-center gap-2 fs-4">
+            <div className="d-flex align-items-center gap-2 fs-4 fs-md-3">
                 <motion.a
                     href="https://www.giuggiolacreativa.it/"
                     target="_blank"
@@ -53,7 +53,7 @@ const WorkLink = () => {
                 <p className="m-0">- Studio Creativo</p>
             </div>
 
-            <div className="d-flex align-items-center gap-2 fs-4">
+            <div className="d-flex align-items-center gap-2 fs-4 fs-md-3">
                 <motion.a
                     href="https://portfolio-saretta.vercel.app/"
                     target="_blank"
