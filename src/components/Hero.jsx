@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
     const blueStyle = { color: "#0066FF" };
+    const MotionLink = motion(Link);
 
     const linkStyle = {
         ...blueStyle,
@@ -53,22 +55,23 @@ const Hero = () => {
                 {/* Corpo principale */}
                 <motion.h2 className="m-0 p-0 fw-medium fs-1 lh-sm" variants={itemVariants}>
                     sono <span style={blueStyle}>Alessio</span>, progetto cose sul web e non solo. <br className="d-none d-md-block" />
-                    Mi è stato consigliato di creare una <span style={blueStyle}>"vetrina"</span> <br className="d-none d-md-block" />
-                    per i miei lavori e così ho fatto.
+                    Qualcuno mi ha detto che sarebbe stato utile avere una <span className="fw-bold" style={blueStyle}>"vetrina"</span> dove raccogliere tutto il mio percorso, <br className="d-none d-md-block" />
+                    quindi l'ho costruita.
                 </motion.h2>
 
                 {/* Info e Contatti */}
                 <motion.div className="fs-4 mt-2" variants={itemVariants}>
                     <p className="mb-2">
                         Qui trovi un
-                        <motion.a
-                            href="#"
+                        {/* 2. Usa MotionLink al posto della combinazione Link + motion.a */}
+                        <MotionLink
+                            to="/worklink"
                             className="d-inline-block fw-bold ms-2"
                             style={linkStyle}
                             whileHover={{ scale: 1.05, opacity: 0.8 }}
                         >
                             link
-                        </motion.a> per i miei lavori.
+                        </MotionLink> per i miei lavori.
                     </p>
                     <p className="m-0">
                         Per bere un caffè insieme o per un saluto scrivi a: <br className="d-md-none" />
