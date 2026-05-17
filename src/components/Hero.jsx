@@ -1,8 +1,17 @@
+import { useState } from "react"; // 1. Importiamo useState
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-    const blueStyle = { color: "#0066FF" };
+    // 2. Stato per gestire l'inversione dei colori
+    const [isInverted, setIsInverted] = useState(false);
+
+    // 3. Stili dinamici in base allo stato
+    const blueStyle = {
+        color: isInverted ? "#FFFFFF" : "#0066FF",
+        transition: "color 0.3s ease"
+    };
+
     const MotionLink = motion(Link);
 
     const linkStyle = {
@@ -18,7 +27,7 @@ const Hero = () => {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2, // Ritardo tra un elemento e l'altro
+                staggerChildren: 0.2,
                 delayChildren: 0.3,
             },
         },
@@ -35,16 +44,37 @@ const Hero = () => {
 
     return (
         <motion.div
-            className="d-flex flex-column p-4 p-md-5"
+            className="d-flex flex-column p-4 p-md-5 vh-100"
             style={{
-                maxWidth: "1100px",
                 fontFamily: "Switzer-Regular",
-                lineHeight: "1.2"
+                lineHeight: "1.2",
+                // 4. Applichiamo lo sfondo e il colore del testo dinamici con transizione
+                backgroundColor: isInverted ? "#0066FF" : "transparent",
+                color: isInverted ? "#FFFFFF" : "inherit",
+                transition: "background-color 0.3s ease, color 0.3s ease",
             }}
             initial="hidden"
             animate="visible"
             variants={containerVariants}
         >
+            {/* 5. Bottone per invertire i colori */}
+            <motion.button
+                onClick={() => setIsInverted(!isInverted)}
+                className="btn align-self-end mb-5 fw-bold px-4 py-2 text-uppercase"
+                style={{
+                    border: `2px solid ${isInverted ? "#FFFFFF" : "#0066FF"}`,
+                    color: isInverted ? "#FFFFFF" : "#0066FF",
+                    backgroundColor: "transparent",
+                    transition: "all 0.3s ease",
+                    cursor: "pointer"
+                }}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+            >
+                {isInverted ? "torna normale!" : "Diventa Blu!"}
+            </motion.button>
+
             {/* Titolo */}
             <motion.h1 className="display-3 fw-bold mb-5" style={blueStyle} variants={itemVariants}>
                 Ciao a tutt*,
@@ -55,7 +85,7 @@ const Hero = () => {
                 {/* Corpo principale */}
                 <motion.h2 className="m-0 p-0 fw-medium fs-1 lh-sm" variants={itemVariants}>
                     sono <span style={blueStyle}>Alessio</span>, progetto cose sul web e non solo. <br className="d-none d-md-block" />
-                    Qualcuno mi ha detto che sarebbe stato utile avere una <span className="fw-bold" style={blueStyle}>"vetrina"</span> dove raccogliere tutto il mio percorso, <br className="d-none d-md-block" />
+                    Qualcuno mi ha detto che sarebbe stato utile avere una <span className="fw-bold" style={blueStyle}>"vetrina"</span> dove raccogliere tutto il mio percorso, <br className="d-none" />
                     quindi l'ho costruita.
                 </motion.h2>
 
@@ -63,7 +93,6 @@ const Hero = () => {
                 <motion.div className="fs-4 mt-2" variants={itemVariants}>
                     <p className="mb-2">
                         Qui trovi un
-                        {/* 2. Usa MotionLink al posto della combinazione Link + motion.a */}
                         <MotionLink
                             to="/worklink"
                             className="d-inline-block fw-bold ms-2"
@@ -71,7 +100,7 @@ const Hero = () => {
                             whileHover={{ scale: 1.05, opacity: 0.8 }}
                         >
                             link
-                        </MotionLink> per i miei lavori.
+                        </MotionLink> con i miei lavori.
                     </p>
                     <p className="m-0">
                         Per bere un caffè insieme o per un saluto scrivi a: <br className="d-md-none" />

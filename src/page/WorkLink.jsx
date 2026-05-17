@@ -50,7 +50,7 @@ const WorkLink = () => {
                 >
                     giuggiolacreativa.it
                 </motion.a>
-                <p className="m-0 text-muted">- Studio Creativo</p>
+                <p className="m-0">- Studio Creativo</p>
             </div>
 
             <div className="d-flex align-items-center gap-2 fs-4">
@@ -63,9 +63,9 @@ const WorkLink = () => {
                     whileHover={{ y: -2, rotate: 2 }}
                     whileTap={{ scale: 0.9 }}
                 >
-                    portfoliosaretta.it
+                    saramolino.it
                 </motion.a>
-                <p className="m-0 text-muted">- Portfolio Digitale</p>
+                <p className="m-0">- Portfolio Digitale</p>
             </div>
         </motion.div>
     );
